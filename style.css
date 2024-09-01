@@ -111,6 +111,7 @@
     padding: 24px;
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
+    font-family: "Poppins", system-ui;
 }
 
 .card-body {
