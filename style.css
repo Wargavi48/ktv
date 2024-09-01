@@ -90,22 +90,27 @@
     box-sizing: border-box;
 }
 
+.card h2 {
+    font-size: 16px;
+}
+
 .card-front {
     width: 100%;
     max-width: 503px;
     height: auto;
     aspect-ratio: 503 / 328; /* Maintain aspect ratio */
-    border-radius: 48px;
+    border-radius: 18px;
     background-color: #DEE9FB;
     overflow: hidden; /* Ensure content stays within the bounds */
     box-sizing: border-box;
+    margin-bottom: 32px;
 }
 
 .card-header {
     background-color: red;
     padding: 24px;
-    border-top-left-radius: 48px;
-    border-top-right-radius: 48px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 
 .card-body {
@@ -115,7 +120,7 @@
     box-sizing: border-box;
 }
 
-.card-body form {
+.card-body-form {
     width: 100%;
     max-width: 50%;
     box-sizing: border-box;
@@ -131,6 +136,16 @@
     margin-top: 8px;
     width: 100%;
     box-sizing: border-box;
+}
+
+.card .form-item input,
+.card .form-item select {
+    padding: 0px;
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    height: 30px; /* Set a fixed height */
+    border-radius: 8px;
+    font-size: 16px;
 }
 
 .profile-container {
@@ -160,12 +175,13 @@
 }
 
 .profile-picture {
-    background-color: red;
     width: 100%;
-    max-width: 225px;
+    max-width: 125px;
     height: auto;
     aspect-ratio: 3 / 4; /* Maintain aspect ratio */
     box-sizing: border-box;
+    background-size: cover; /* Ensure the image covers the div */
+    background-position: center; /* Center the image within the div */
 }
 
 .card-header h1 {

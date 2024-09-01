@@ -38,7 +38,7 @@
                             <input type="file" name="avatar" id="avatar">
                         </div>
                         <div class="btn-container">
-                            <button type="submit" class="btn-submit" id="downloadPDF">Make KTV</button>
+                            <button type="submit" class="btn-submit" id="downloadPDF" accept="image/*">Make KTV</button>
                         </div>
                     </form>
                 </div>
@@ -50,26 +50,28 @@
                     <h1>Kartu Tanda Virtual</h1>
                 </div>
                 <div class="card-body">
-                    <div class="form-item">
-                        <label for="">
-                            <h2>Username Youtube</h2>
-                        </label>
-                        <input type="text" class="form-input" id="user_yt_ktv" readonly>
-                    </div>
-                    <div class="form-item">
-                        <label for="">
-                            <h2>Oshimen</h2>
-                        </label>
-                        <input type="text" class="form-input" id="oshimen_ktv" readonly>
-                    </div>
-                    <div class="form-item">
-                        <label for="">
-                            <h2>Tanggal Join</h2>
-                        </label>
-                        <input type="text" class="form-input" id="tgl_join_ktv" readonly>
+                    <div class="card-body-form">
+                        <div class="form-item">
+                            <label for="">
+                                <h2>Username Youtube</h2>
+                            </label>
+                            <input type="text" class="form-input" id="user_yt_ktv" readonly>
+                        </div>
+                        <div class="form-item">
+                            <label for="">
+                                <h2>Oshimen</h2>
+                            </label>
+                            <input type="text" class="form-input" id="oshimen_ktv" readonly>
+                        </div>
+                        <div class="form-item">
+                            <label for="">
+                                <h2>Tanggal Join</h2>
+                            </label>
+                            <input type="text" class="form-input" id="tgl_join_ktv" readonly>
+                        </div>
                     </div>
                     <div class="profile-container">
-                        <div id="profile-picture"></div>
+                        <div id="profile-picture" class="profile-picture"></div>
                         <h2>Masa Berlaku</h2>
                         <h2>Seumur Hidup</h2>
                     </div>
@@ -94,6 +96,18 @@
         tgl_join.value = `${day} ${stringMonth[month]} ${year}`;
 
 // Ensure the card is shown only during PDF generation
+document.getElementById('avatar').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const profilePicture = document.getElementById('profile-picture');
+            profilePicture.style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
 document.getElementById('downloadPDF').addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -118,6 +132,7 @@ document.getElementById('downloadPDF').addEventListener('click', function (event
         card.style.display = 'none';
     });
 });
+
 
     </script>
 </body>
