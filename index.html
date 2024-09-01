@@ -3,12 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Kartu Tanda Virtual Generator</title>
 </head>
 <body>
     <div class="container">
-        <div class="card-front"></div>
-        <div class="card-back"></div>
+        <div class="card">
+            <div class="card-front">
+                <div class="card-header">
+                    <h1>Kartu Tanda Virtual</h1>
+                </div>
+                <div class="card-body">
+                    <form action="">
+                        <label for="">
+                            <h2>Username Youtube</h2>
+                        </label>
+                        <input type="text">
+                        <label for="">
+                            <h2>Oshimen</h2>
+                        </label>
+                        <select name="member" id="member">
+                            <option value="kana">Kana</option>
+                            <option value="tana">Tana</option>
+                            <option value="pia">Pia</option>
+                          </select>
+                        <label for="">
+                            <h2>Username Youtube</h2>
+                        </label>
+                        <input type="text">
+                    </form>
+                    <div class="profile-container">
+                        <div class="profile-picture"></div>
+                        <h2>Masa Berlaku</h2>
+                        <h2>Seumur Hidup</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card-back">
+                <img src="./assets/KTV Back.png" alt="">
+            </div>
+        </div>
     </div>
 </body>
 </html>
