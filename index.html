@@ -112,6 +112,7 @@ document.getElementById('downloadPDF').addEventListener('click', function (event
     event.preventDefault();
 
     // Populate the card with user input
+    const user = document.getElementById('user-yt').value
     document.getElementById('user_yt_ktv').value = document.getElementById('user-yt').value;
     document.getElementById('oshimen_ktv').value = document.getElementById('member').options[document.getElementById('member').selectedIndex].text;
     document.getElementById('tgl_join_ktv').value = document.getElementById('tgl-join').value;
@@ -123,7 +124,7 @@ document.getElementById('downloadPDF').addEventListener('click', function (event
     // Use html2pdf to generate and download the PDF
     html2pdf().from(card).set({
         margin: 1,
-        filename: 'card-content.pdf',
+        filename: `Kartu Tanda Virtual-${user}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
