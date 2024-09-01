@@ -32,6 +32,13 @@
                             <label for=""><p>Tanggal Join</p></label>
                             <input type="text" class="form-input" id="tgl-join" disabled>
                         </div>
+                        <div class="form-item">
+                            <label for=""><p>Unggah Foto</p></label>
+                            <input type="file" name="avatar" id="">
+                        </div>
+                        <div class="btn-container">
+                            <button type="submit" class="btn-submit">Make KTV</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -79,5 +86,29 @@
             </div>
         </div>
     </div>
+    <script>
+        const tgl_join = document.getElementById("tgl-join")
+        const date = new Date();
+
+        const stringMonth = {
+                1: "January",
+                2: "February",
+                3: "March",
+                4: "April",
+                5: "May",
+                6: "June",
+                7: "July",
+                8: "August",
+                9: "September",
+                10: "October",
+                11: "November",
+                12: "December"
+        };
+
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        tgl_join.value = `${day} ${stringMonth[month]} ${year}`
+    </script>
 </body>
 </html>
