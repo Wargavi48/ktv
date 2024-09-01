@@ -78,23 +78,27 @@
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
   }
 
-.card {
+  .card {
     width: 100%;
-    display: none;
+    max-width: 800px; /* Adjust max-width to fit within an A4 page width */
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 24px;
     margin-top: 24px;
+    box-sizing: border-box;
 }
 
 .card-front {
-    max-width: 1006px;
-    height: 655px;
-    /* height: 100%; */
     width: 100%;
+    max-width: 503px;
+    height: auto;
+    aspect-ratio: 503 / 328; /* Maintain aspect ratio */
     border-radius: 48px;
     background-color: #DEE9FB;
+    overflow: hidden; /* Ensure content stays within the bounds */
+    box-sizing: border-box;
 }
 
 .card-header {
@@ -105,33 +109,38 @@
 }
 
 .card-body {
-    padding: 64px;
-    width: 100%;
+    padding: 24px; /* Adjusted padding for better fit */
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping to prevent overflow */
+    box-sizing: border-box;
 }
 
 .card-body form {
-    width: 50%;
+    width: 100%;
+    max-width: 50%;
+    box-sizing: border-box;
 }
 
 .form-item {
     margin-bottom: 16px;
+    box-sizing: border-box;
 }
 
-.form-item input {
-    margin-top: 8px;
-}
-
+.form-item input,
 .form-item select {
     margin-top: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .profile-container {
-    width: 50%;
+    width: 100%;
+    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .form-input {
@@ -140,17 +149,23 @@
     border-radius: 8px;
     border: none;
     padding: 12px;
+    box-sizing: border-box;
 }
 
 .form-select {
-    padding: 0.675em 6em 0.675em 1em;
+    padding: 0.675em 1em;
     height: 40px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .profile-picture {
     background-color: red;
-    width: 225px;
-    height: 300px;
+    width: 100%;
+    max-width: 225px;
+    height: auto;
+    aspect-ratio: 3 / 4; /* Maintain aspect ratio */
+    box-sizing: border-box;
 }
 
 .card-header h1 {
